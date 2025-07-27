@@ -2,9 +2,12 @@ def get_numbers():
     numbers = []
     print("Enter numbers one by one. Type 'done' to finish.")
     while True:
-        entry = input("Enter a number (or 'done'): ")
+        entry = input("Enter a number (or 'done'): ").strip()
         if entry.lower() == 'done':
             break
+        if entry == '':
+            print("Input cannot be empty. Try again.")
+            continue
         try:
             num = float(entry)
             numbers.append(num)
